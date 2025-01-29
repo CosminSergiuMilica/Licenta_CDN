@@ -1,0 +1,91 @@
+syntax="proto3";
+
+service IDMService{
+    rpc Login(LoginRequest) returns (LoginResponse);
+    rpc VerifyToken(TokenRequest) returns (TokenResponse);
+    rpc SignUp(SignUpRequest) returns (SignUpResponse);
+    rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+    rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+    rpc GetUserData(GetUserRequest) returns (GetUserResponse);
+    rpc GetUserMail(GetMailRequest) returns (GetMailResponse);
+}
+
+message GetUserRequest{
+    string user_id=1;
+}
+message GetUserResponse{
+    string username=1;
+    string last_name=4;
+    string first_name=5;
+    string phone=6;
+    string email=7;
+    string country=8;
+    string message=9;
+}
+
+message GetMailRequest{
+    string user_id=1;
+}
+
+message GetMailResponse{
+    string email=1;
+    int32 code=2;
+}
+
+message DeleteUserRequest{
+    string user_id=1;
+}
+
+message UpdateUserRequest{
+    string username=1;
+    string password=2;
+    string id_user=3;
+}
+
+message DeleteUserResponse{
+    string message=1;
+    int32 code=2;
+}
+
+message UpdateUserResponse{
+    string id_user=1;
+    string message=2;
+    int32 code=3;
+}
+
+message LoginRequest{
+    string username = 1;
+    string password = 2;
+}
+
+message LoginResponse{
+    string access_token = 1;
+    string message = 2;
+    int32 code=3;
+}
+
+message TokenRequest{
+    string token = 1;
+}
+
+message TokenResponse{
+    string is_valid = 1;
+    string message = 2;
+}
+
+message SignUpRequest{
+    string username=1;
+    string password=2;
+    string last_name=4;
+    string first_name=5;
+    string phone=6;
+    string email=7;
+    string country=8;
+}
+
+message SignUpResponse{
+    string access_token = 1;
+    string id_user=2;
+    string message = 3;
+    int32 code=4;
+}

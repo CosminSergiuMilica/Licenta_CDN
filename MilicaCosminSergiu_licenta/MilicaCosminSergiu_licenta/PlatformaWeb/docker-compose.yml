@@ -1,0 +1,75 @@
+version: '3.8'
+services:
+  maria-user:
+    image: cosminsergiu27/userdb_image
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: user_db
+      MYSQL_USER: cosmin
+      MYSQL_PASSWORD: cosmin
+    ports:
+      - "3306:3306"
+    volumes:
+      - user_data:/var/lib/mysql
+    networks:
+      - cdn-network
+  gateway:
+    image: cosminsergiu27/gateway_image
+    depends_on:
+      - maria-user
+    ports:
+      - "172.31.19.173:80:8000"
+    networks:
+      - cdn-network
+  users-service:
+    image: cosminsergiu27/user_service_image
+    container_name: user_service
+    depends_on:
+      - maria-user
+    ports:
+      - "50051:50051"
+    networks:
+      - cdn-network
+  cache-service:
+    image: cosminsergiu27/cache_service_image
+    container_name: cache_service
+    ports:
+      - "8002:8000"
+    networks:
+      - cdn-network
+  mailserver-service:
+    image: cosminsergiu27/mailserver_image
+    container_name: mailserver
+    ports:
+      - "172.31.19.173:8200:8200"
+    networks:
+      - cdn-network
+  sqs_service_image:
+    image: cosminsergiu27/sqs_service_image
+    ports:
+     - "172.31.19.173:8221:8221"
+    networks:
+      - cdn-network
+  origin-service:
+    image: cosminsergiu27/origin_service_image
+    container_name: origin_service
+    depends_on:
+      - maria-user
+    ports:
+      - "8001:8000"
+    networks:
+      - cdn-network
+
+  edgeserver-service:
+    image: cosminsergiu27/edgeserver_service
+    container_name: edgeserver_service
+    ports:
+      - "8003:8000"
+    networks:
+      - cdn-network
+networks:
+  cdn-network:
+   external: true
+volumes:
+  user_data:

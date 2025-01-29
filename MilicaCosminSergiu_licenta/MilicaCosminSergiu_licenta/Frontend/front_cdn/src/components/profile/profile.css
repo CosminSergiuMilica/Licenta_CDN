@@ -1,0 +1,23 @@
+.hacker-profile {
+  font-size: 30px;
+  padding: 20px;
+  color: #0f0f0f;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.profile-info p {
+  margin: 10px 0;
+  font-size: 25px;
+}
+
+.profile-info span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.ascii-art {
+  font-size: 20px;
+  margin-top: 20px;
+}

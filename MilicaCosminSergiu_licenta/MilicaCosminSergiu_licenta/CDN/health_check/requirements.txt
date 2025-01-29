@@ -1,0 +1,4 @@
+httpx
+asyncio
+boto3
+pymongo

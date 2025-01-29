@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+boto3
+requests
+pydantic
+starlette
+pymongo

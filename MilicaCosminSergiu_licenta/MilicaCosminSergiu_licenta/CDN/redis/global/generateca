@@ -1,0 +1,5 @@
+openssl genrsa -out redis.key 2048
+
+openssl req -new -key redis.key -out redis.csr
+
+openssl x509 -req -in redis.csr -signkey redis.key -out redis.crt -days 365

@@ -1,0 +1,11 @@
+fastapi~=0.104.1
+uvicorn
+peewee~=3.17.0
+pymongo
+requests
+PyJWT
+grpcio
+protobuf
+pydantic
+redis
+boto3

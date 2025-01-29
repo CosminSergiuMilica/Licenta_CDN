@@ -1,0 +1,57 @@
+/* signup.css */
+
+.contr {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+.text {
+  text-align: center;
+}
+
+.second-header {
+  color: #333;
+}
+
+.description {
+  color: #666;
+}
+
+.main-header {
+  color: #0f0f0f;
+  font-size: 40px;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: #d9534f;
+  margin-bottom: 10px;
+}
+
+.btn {
+  text-align: center;
+}
+

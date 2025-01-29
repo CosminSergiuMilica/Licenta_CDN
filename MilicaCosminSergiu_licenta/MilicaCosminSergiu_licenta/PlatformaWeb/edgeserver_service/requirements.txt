@@ -1,0 +1,8 @@
+fastapi~=0.104.1
+uvicorn
+pymongo
+PyJWT
+grpcio
+protobuf
+pydantic
+boto3

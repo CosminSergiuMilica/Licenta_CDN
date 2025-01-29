@@ -1,0 +1,70 @@
+.containerip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ips-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ip-block {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.ip-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+.origin-service-container {
+  padding: 20px;
+}
+
+.h1-site {
+  text-align: center;
+}
+
+.server-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.server-table th, .server-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.server-table th {
+  background-color: #f2f2f2;
+}
+
+.server-row:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.status-image {
+  width: 16px;  
+  height: 16px;
+}
